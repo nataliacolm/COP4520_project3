@@ -86,7 +86,7 @@ public class LockFreeLL
                 if (pred.next.compareAndSet(curr, node, false, false))
                     return true;
                 // don't need to start from head again.
-               // search = pred;
+                //search = pred;
             }
         }
     }
@@ -115,6 +115,22 @@ public class LockFreeLL
                 return true;
             }
         }
+    }
+
+    public void traverse()
+    {
+        Node curr = head;
+
+        while (curr != tail)
+        {
+            curr = curr.next.getReference();
+            System.out.println("curr: " + curr.key);
+        }
+    }
+
+    public boolean is_empty()
+    {
+        return head.next.getReference() == tail;
     }
 
 
