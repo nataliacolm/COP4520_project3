@@ -1,4 +1,5 @@
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Arrays;
 import java.util.Random;
@@ -7,59 +8,73 @@ import java.util.*;
 public class LList
 {
     private static final int num_presents = 500000;
+    private static volatile boolean end = false;
     private static AtomicInteger adder = new AtomicInteger(0);
     private static AtomicInteger to_delete = new AtomicInteger(0);
-    private static LockFreeLL list = new LockFreeLL(-1, num_presents + 1);
-    // private static Random rand = new Random();
+    private static Random rand = new Random();
+    public static CountDownLatch latch = new CountDownLatch(4);
 
     static class Servant implements Runnable
     {
-        private static ArrayList<Integer> bag = new ArrayList<>();
+        private ArrayList<Integer> bag = new ArrayList<>();
+        private LockFreeLL list;
 
-        Servant(ArrayList<Integer> bag)
+        Servant(ArrayList<Integer> bag, LockFreeLL list)
         {
             this.bag = bag;
+            this.list = list;
         }
 
         @Override
         public void run()
         {
-            while (adder.get() < num_presents + 1 && to_delete.get() < num_presents + 1)
+           while (true)
             {
                 int to_add = adder.getAndIncrement();
     
                 if (to_add < num_presents)
                 {
                     list.add(bag.get(to_add));
-                    if (to_add == num_presents - 1)
-                        System.out.println("Last item is: " + bag.get(to_add));
                 }
 
                 int val = to_delete.getAndIncrement();
+
                 if (val < num_presents)
                 {
                     int to_del = bag.get(val);
                     boolean test = false;
 
-                    if (val == num_presents - 1)
-                    System.out.println("Del " + to_del);
-               
+                    // Make sure the delete is successful
                     while (!test)
                     {
                         test = list.remove(to_del);
                     }
                 }
+
+                if (adder.get() >= num_presents && to_delete.get() >= num_presents)
+                {
+                    break;
+                }
+            
             }
 
-            System.out.println("Done");
-
+            list.remove(bag.get(num_presents - 2));
+            
             if (list.is_empty())
-                System.out.println("Empty");
-
+            {
+                end = true;
+            }
+        
+            /*
+            // Test Portion to make sure all thank you notes were written.
             else
             {
                 list.traverse();
+                System.out.println("Delete: " + to_delete.get());
             }
+            */
+            
+            
         }
     }
 
@@ -80,20 +95,34 @@ public class LList
     public static void main(String [] args)
     {
         ArrayList<Integer> bag = new ArrayList<>();
+
         for (int i = 0; i < num_presents; i++)
         {
             bag.add(i);
         }
 
         Collections.shuffle(bag);
+        LockFreeLL list = new LockFreeLL(-1, num_presents + 1);
         
         for (int i = 0; i < 4; i++)
         {
-            Servant servant = new Servant(bag);
+            Servant servant = new Servant(bag, list);
             Thread thread = new Thread(servant);
             thread.start();
         }
 
-        System.out.println("List item: " + bag.get(499999));
+        
+        boolean temp = false;
+        while (!temp)
+        {
+            if (end)
+            {
+                System.out.println("The Chain of Presents is Now Empty!");
+                temp = true;
+            }
+        }
+        
+        // Sanity check
+        // System.out.println("List item: " + bag.get(499999));
     }
 }
