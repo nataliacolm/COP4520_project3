@@ -37,6 +37,7 @@ public class LList
                     list.add(bag.get(to_add));
                 }
 
+                
                 int val = to_delete.getAndIncrement();
 
                 if (val < num_presents)
@@ -55,7 +56,6 @@ public class LList
                 {
                     break;
                 }
-            
             }
 
             list.remove(bag.get(num_presents - 2));

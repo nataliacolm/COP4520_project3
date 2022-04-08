@@ -74,6 +74,7 @@ public class LockFreeLL
         {
             Window window = find(search, key);
             Node pred = window.pred, curr = window.curr;
+            
             if (curr.key == key)
             {
                 return false;
