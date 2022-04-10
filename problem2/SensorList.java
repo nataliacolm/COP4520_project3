@@ -1,5 +1,13 @@
+// Natalia Colmenares
+// COP 4520
+
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+
+
+// SensorList is a modified list that follows a hashmap <key, value>, but uses nodes.
+// Therefore, inserting (updating the value) in the sensor list will never result in waiting since
+// the keys are already predefined by the temperature.
 
 public class SensorList
 {
@@ -25,8 +33,6 @@ public class SensorList
         public AtomicReference<Node> next;
         public AtomicReference<Node> prev;
 
-
-
         Node(int id)
         {
             this.key = id;
@@ -35,6 +41,7 @@ public class SensorList
         }
     }
 
+    // Called by main thread to create the list with keys.
     public void create_list()
     {
         int start = min_temp;
@@ -74,6 +81,7 @@ public class SensorList
         }
     }
 
+    // Helper function called by main to find the largest temperature range.
     public int find_range()
     {
         Node curr = head.next.get();
@@ -85,21 +93,24 @@ public class SensorList
             curr = curr.next.get();
         }
 
-        max = curr.key;
+        min = curr.key;
 
         curr = tail.prev.get();
+
         while (curr.freq.get() <= 0)
         {
             curr = curr.prev.get();
         }
 
-        min = curr.key;
+        max = curr.key;
 
         return max - min;
     }
 
+    // Function called by main to get the lowest 5 temperatures in an hour.
     public void get_low_five()
     {
+        /* For non-unique values uncomment the following and comment the other code portion
         int count = 0;
         Node curr = head.next.get();
 
@@ -120,10 +131,29 @@ public class SensorList
             if (curr != tail)
                 curr = curr.next.get();
         }
+        */
+
+        int count = 0;
+        Node curr = head.next.get();
+
+        while (count < 5 && curr != tail)
+        {
+            if (curr.freq.get() > 0)
+            {
+                System.out.println(curr.key);
+                count++;
+            }
+
+            if (curr != tail)
+                curr = curr.next.get();
+        }
+
     }
 
+    // Function called by main to get the top five temperatures in an hour. Values are unique.
     public void get_top_five()
     {
+        /* For non-unique values uncomment the following and comment the other code portion
         int count = 0;
         Node curr = tail.prev.get();
 
@@ -145,8 +175,25 @@ public class SensorList
             if (curr != head)
                 curr = curr.prev.get();
         }
+        */
+
+        int count = 0;
+        Node curr = tail.prev.get();
+
+        while (count < 5 && curr != head)
+        {
+            if (curr.freq.get() > 0)
+            {
+                System.out.println(curr.key);
+                count++;
+            }
+
+            if (curr != head)
+                curr = curr.prev.get();
+        }
     }
 
+    // Tester function to make sure list is constructed correctly.
     public void traverse()
     {
         Node curr = tail.prev.get();
@@ -158,6 +205,7 @@ public class SensorList
         }
     }
 
+    // Clean the id values so that the list is reusable again!
     public void cleanup()
     {
         Node curr = head.next.get();
