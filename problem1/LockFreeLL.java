@@ -1,6 +1,7 @@
 // Natalia Colmenares
 // COP 4520
 
+// This Lock free linked list implementation is from the book The Art of Multiprocessor Programming.
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class LockFreeLL
