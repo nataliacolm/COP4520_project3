@@ -1,3 +1,6 @@
+// Natalia Colmenares
+// COP 4520
+
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -8,6 +11,7 @@ import java.util.*;
 public class LList
 {
     private static final int num_presents = 500000;
+    private static final int num_servants = 4;
     private static volatile boolean end = false;
     private static AtomicInteger adder = new AtomicInteger(0);
     private static AtomicInteger to_delete = new AtomicInteger(0);
@@ -36,7 +40,6 @@ public class LList
                 {
                     list.add(bag.get(to_add));
                 }
-
                 
                 int val = to_delete.getAndIncrement();
 
@@ -51,6 +54,16 @@ public class LList
                         test = list.remove(to_del);
                     }
                 }
+
+                // Check random contains
+                int answer = rand.nextInt(num_servants - 0 + 1) + 0;
+
+                if (answer == 0)
+                {
+                    answer = rand.nextInt(num_presents - 0 + 1) + 0;
+                    list.contains(answer);
+                }
+
 
                 if (adder.get() >= num_presents && to_delete.get() >= num_presents)
                 {
@@ -104,7 +117,7 @@ public class LList
         Collections.shuffle(bag);
         LockFreeLL list = new LockFreeLL(-1, num_presents + 1);
         
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < num_servants; i++)
         {
             Servant servant = new Servant(bag, list);
             Thread thread = new Thread(servant);

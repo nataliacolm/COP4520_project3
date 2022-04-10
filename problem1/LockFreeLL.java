@@ -1,3 +1,6 @@
+// Natalia Colmenares
+// COP 4520
+
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class LockFreeLL
@@ -67,6 +70,20 @@ public class LockFreeLL
         }
     }
 
+    public boolean contains(int key)
+    {
+        boolean [] marked = {false};
+        Node curr = head;
+
+        while (curr.key < key)
+        {
+            curr = curr.next.getReference();
+            Node succ = curr.next.get(marked);
+        }
+
+        return (curr.key == key && !marked[0]);
+    }
+
     public boolean add(int key)
     {
         Node search = head;
@@ -86,8 +103,6 @@ public class LockFreeLL
                 node.next = new AtomicMarkableReference<>(curr, false);
                 if (pred.next.compareAndSet(curr, node, false, false))
                     return true;
-                // don't need to start from head again.
-                //search = pred;
             }
         }
     }
