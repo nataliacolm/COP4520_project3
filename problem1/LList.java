@@ -124,7 +124,6 @@ public class LList
             thread.start();
         }
 
-        
         boolean temp = false;
         while (!temp)
         {
@@ -134,8 +133,5 @@ public class LList
                 temp = true;
             }
         }
-        
-        // Sanity check
-        // System.out.println("List item: " + bag.get(499999));
     }
 }

@@ -1,0 +1,13 @@
+Proof of correctness:
+
+
+Using progress guarantee of linearizability:
+The moment the value gets incremented is the moment all other threads will be able to see the effect. Thus, the linearization point can be said to occur the moment incrementAndGet() is called in the add() function.
+
+
+Efficiency:
+Will not be delayed because we know the range.
+
+
+Experimental evaluation:
+First attempt
