@@ -4,7 +4,6 @@
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-
 // SensorList is a modified list that follows a hashmap <key, value>, but uses nodes.
 // Therefore, inserting (updating the value) in the sensor list will never result in waiting since
 // the keys are already predefined by the temperature.
@@ -105,6 +104,69 @@ public class SensorList
         max = curr.key;
 
         return max - min;
+    }
+
+    public int find_max()
+    {
+        Node curr = tail.prev.get();
+        while (curr.freq.get() <= 0)
+        {
+            curr = curr.prev.get();
+        }
+
+        int max = curr.key;
+        return max;
+    }
+
+    public int find_min()
+    {
+        Node curr = head.next.get();
+        while (curr.freq.get() <= 0)
+        {
+            curr = curr.next.get();
+        }
+
+        int min = curr.key;
+        return min;
+    }
+
+    public boolean remove(int key)
+    {
+        // start at tail
+        if (key > 0)
+        {
+            Node curr = tail.prev.get();
+
+            // Item will for sure be in the list because of the range.
+            while (true)
+            {
+                if (curr.key == key)
+                {
+                    curr.freq.decrementAndGet();
+                    return true;
+                }
+    
+                curr = curr.prev.get();
+            }
+        }
+
+        // start at head
+        else
+        {
+            Node curr = head.next.get();
+
+            // Item will for sure be in the list because of the range.
+            while (true)
+            {
+                if (curr.key == key)
+                {
+                    curr.freq.decrementAndGet();
+                    return true;
+                }
+    
+                curr = curr.next.get();
+            }
+        }
     }
 
     // Function called by main to get the lowest 5 temperatures in an hour.
