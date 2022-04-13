@@ -1,0 +1,442 @@
+20 hours:
+==========TOP 5 HIGHEST TEMPS: HOUR 1============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 1=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 12 - 2 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 2============
+70
+69
+67
+66
+65
+==========TOP 5 LOWEST TEMPS: HOUR 2=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 52 - 42 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 3============
+70
+69
+68
+67
+65
+==========TOP 5 LOWEST TEMPS: HOUR 3=============
+-100
+-99
+-97
+-96
+-94
++++++ MAX 10 MINUTE INTERVAL: 12 - 2 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 4============
+69
+68
+67
+66
+65
+==========TOP 5 LOWEST TEMPS: HOUR 4=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 47 - 37 Difference: 168 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 5============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 5=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 18 - 8 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 6============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 6=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 54 - 44 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 7============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 7=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 22 - 12 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 8============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 8=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 33 - 23 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 9============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 9=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 10 - 0 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 10============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 10=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 10 - 0 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 11============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 11=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 33 - 23 Difference: 169 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 12============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 12=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 52 - 42 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 13============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 13=============
+-100
+-99
+-98
+-96
+-95
++++++ MAX 10 MINUTE INTERVAL: 10 - 0 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 14============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 14=============
+-100
+-99
+-97
+-96
+-95
++++++ MAX 10 MINUTE INTERVAL: 12 - 2 Difference: 168 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 15============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 15=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 27 - 17 Difference: 169 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 16============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 16=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 44 - 34 Difference: 169 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 17============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 17=============
+-99
+-98
+-97
+-96
+-95
++++++ MAX 10 MINUTE INTERVAL: 52 - 42 Difference: 169 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 18============
+70
+67
+66
+65
+63
+==========TOP 5 LOWEST TEMPS: HOUR 18=============
+-99
+-98
+-96
+-95
+-93
++++++ MAX 10 MINUTE INTERVAL: 32 - 22 Difference: 169 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 19============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 19=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 10 - 0 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 20============
+69
+68
+67
+66
+65
+==========TOP 5 LOWEST TEMPS: HOUR 20=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 10 - 0 Difference: 169 +++++
+
+5 hours:
+==========TOP 5 HIGHEST TEMPS: HOUR 1============
+70
+69
+68
+67
+65
+==========TOP 5 LOWEST TEMPS: HOUR 1=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 43 - 33 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 2============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 2=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 49 - 39 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 3============
+70
+68
+67
+66
+65
+==========TOP 5 LOWEST TEMPS: HOUR 3=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 14 - 4 Difference: 170 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 4============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 4=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 15 - 5 Difference: 167 +++++
+
+
+==========TOP 5 HIGHEST TEMPS: HOUR 5============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 5=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 26 - 16 Difference: 170 +++++
+
+1 hour:
+==========TOP 5 HIGHEST TEMPS: HOUR 1============
+70
+69
+68
+67
+66
+==========TOP 5 LOWEST TEMPS: HOUR 1=============
+-100
+-99
+-98
+-97
+-95
++++++ MAX 10 MINUTE INTERVAL: 55 - 45 Difference: 170 +++++
+
+==========TOP 5 HIGHEST TEMPS: HOUR 1============
+70
+69
+68
+66
+65
+==========TOP 5 LOWEST TEMPS: HOUR 1=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 28 - 18 Difference: 170 +++++
+
+==========TOP 5 HIGHEST TEMPS: HOUR 1============
+69
+68
+67
+66
+65
+==========TOP 5 LOWEST TEMPS: HOUR 1=============
+-100
+-99
+-98
+-97
+-96
++++++ MAX 10 MINUTE INTERVAL: 14 - 4 Difference: 168 +++++
+
+==========TOP 5 HIGHEST TEMPS: HOUR 1============
+70
+69
+68
+66
+65
+==========TOP 5 LOWEST TEMPS: HOUR 1=============
+-100
+-99
+-97
+-96
+-95
++++++ MAX 10 MINUTE INTERVAL: 27 - 17 Difference: 170 +++++
+
+Execution time for 20 hours:
+Execution time (milliseconds): 138
+Execution time (milliseconds): 136
+Execution time (milliseconds): 143
+Execution time (milliseconds): 119
+Execution time (milliseconds): 119
+Execution time (milliseconds): 145
+Execution time (milliseconds): 121
+Execution time (milliseconds): 140
+Execution time (milliseconds): 115
