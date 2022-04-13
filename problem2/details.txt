@@ -1,13 +1,19 @@
-Proof of correctness:
+Overview:
+Different linked lists are used to store information in sorted order for the purpose of retrieving data in sorted order for the reporting. Threads mimic a minute by using a count down latch in java. A thread may only start the next iteration once all threads have finished the previous one. This ensures that "readings are taken every 1 minute" is simulated in the program. Additionally, in this program, a minute is simulated as an iteration and 60 iterations is equal to an hour. The current program is set to 4 hours but can be changed by changing the int hours variable in the Temp class.
 
+
+Proof of correctness:
+My linked list implementation utilizes the range information of -100 to 70F to construct the initial list. This list also allows for duplicates by using a <key, value> structure. In order to add or remove from the list, a thread would search for the key and call an incrementAndGet() or decrementAndGet() on the value portion. Therefore, no synchronization issues will arise when attempting to add or delete at the same time since only the value is atomically incremented or decremented. This also means that the threads will never be delayed since the list already has constructed nodes <-100, 0>...<70,0> for the initialization. Therefore, a thread only has to worry about locating the temperature in the list. 
+
+In order to preserve the order during the 10 minute intervals, an AtomicIntegerArray is created to demonstrate during which iteration of time the 8 sensors added a certain value. In this process, a static atomic integer is used by all threads that represents the index a thread may use to input their given value. In this case, a thread calls the getAndIncrement() on the index variable to ensure that no thread overlaps when adding to the array list. Therefore, no synchronization issues arise here either and threads are not delayed in this step.
 
 Using progress guarantee of linearizability:
-The moment the value gets incremented is the moment all other threads will be able to see the effect. Thus, the linearization point can be said to occur the moment incrementAndGet() is called in the add() function.
+The moment the value gets incremented is the moment all other threads will be able to see the effect. Thus, the linearization point can be said to occur the moment incrementAndGet() is called in the add() function or decrementAndGet() in the remove() function. 
 
 
 Efficiency:
-Will not be delayed because we know the range.
+Threads will not be delayed since we know the range beforehand and threads may add concurrently without the fear of conflicting because only an atomic integer is getting updated. Additionally, this is a doubly linked list, which means it is easy to grab the 5 top temperatures and the lowest 5 temperatures from the hour by starting from head or tail since the doubly linked list is already sorted. Also, when adding to the array list that stores the interval of times that temperature readings were put in, it is not dependent on the state of other threads. Therefore, delays also do not occur when modifying the array list. 
 
 
 Experimental evaluation:
-First attempt
+First attempt involved a lock-free linked list, but after careful evaluation, it worried me that one thread may get delayed if references changed when adding or deleting. Therefore, my next idea was to combine that of a hash map and a sorted linked list. As a result, I took advantage of the fact that the temperatures had a certain range and created the linked list I have implemented in the program right now. In fact, when testing, threads were able to immediately add their temperature readings without an issue. 
